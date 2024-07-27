@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-function that returns a list of lists of integers representing 
+function that returns a list of lists of integers representing
 the Pascal’s
 """
 
 
 def pascal_triangle(n):
-    """this function returns a list of lists of integers representing 
+    """this function returns a list of lists of integers representing
     the Pascal’s
     """
     res = []
