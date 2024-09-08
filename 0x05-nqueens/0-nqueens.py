@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-""" N queens solver """
 import sys
 
-# Input validation
+# Validate command-line arguments
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
     sys.exit(1)
@@ -18,7 +17,7 @@ if n < 4:
     sys.exit(1)
 
 def queens(n, row=0, cols=[], diag1=[], diag2=[]):
-    """ Recursive generator to find valid positions """
+    """ Recursive generator to find valid N-Queens placements """
     if row == n:
         yield cols
     else:
@@ -27,9 +26,9 @@ def queens(n, row=0, cols=[], diag1=[], diag2=[]):
                 yield from queens(n, row + 1, cols + [col], diag1 + [row + col], diag2 + [row - col])
 
 def solve(n):
-    """ Solves the N Queens puzzle and prints the solutions """
+    """ Solves the N Queens puzzle and prints all valid solutions """
     for solution in queens(n):
-        solution_coordinates = [[i, col] for i, col in enumerate(solution)]
-        print(solution_coordinates)
+        formatted_solution = [[i, col] for i, col in enumerate(solution)]
+        print(formatted_solution)
 
 solve(n)
